@@ -18,7 +18,12 @@ public class ChuckNorrisEncoding {
 		//convert data into binary format
 		StringBuilder binary = new StringBuilder();
 		for(char c : message) {
-			binary.append(Integer.toBinaryString(c));
+			String res = Integer.toBinaryString(c);
+			
+			//for non-letters
+			while(res.length() < 7) res = '0' + res;
+			
+			binary.append(res);
 		}
 		
 		int i = 0;
@@ -37,7 +42,7 @@ public class ChuckNorrisEncoding {
 				i++;
 				if(i >= binary.length()) break;
 			}
-			System.out.print(" ");
+			if(i < binary.length()) System.out.print(" ");
 		}
 		in.close();
 	}
