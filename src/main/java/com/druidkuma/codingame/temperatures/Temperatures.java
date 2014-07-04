@@ -41,7 +41,8 @@ public class Temperatures {
 		Integer closest = null;
 		for(int i = 0; i < n; i++) {
 			int current = in.nextInt();
-			if(closest == null || Math.abs(closest) > Math.abs(current)) closest = current;
+			if(closest == null || Math.abs(closest) > Math.abs(current) 
+					|| Math.abs(closest) == Math.abs(current) && closest < current) closest = current;
 		}
 		System.out.println(closest);
 		in.close();
