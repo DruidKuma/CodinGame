@@ -26,13 +26,13 @@ class Player {
             int X = in.nextInt(); // the position on the road of the motorbike.
             in.nextLine();
 
-            if(X >= R+G || S >= 5) {
-                System.out.println("SLOW");
-            }
-            else if(X+S >= R+G) {
+            if(X == R - 1) {
                 System.out.println("JUMP");
             }
-            else if(R-G >= X && L >= S && G >= S) {
+            else if(X > R || S > G + 1) {
+                System.out.println("SLOW");
+            }
+            else if(S < G + 1) {
                 System.out.println("SPEED");
             }
             else {
